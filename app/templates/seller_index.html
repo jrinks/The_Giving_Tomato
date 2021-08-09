@@ -1,0 +1,67 @@
+<div
+  class="bg-image"
+  style="
+    background-image:  url('../static/img/pexels-vitezslav-vylicil-5412144.jpg');
+    size=50%;
+    width: 100vw;
+    height: 100vh
+  "
+>
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class='row text-center align-content-center h-100'>
+
+<div class='col'>
+
+
+
+    <div class='card p-5'>
+      <h3> Sigh In Here</h3>
+      <form action="" method="post" novalidate>
+          {{ form.hidden_tag() }}
+          <p>
+              {{ form.username.label }}<br>
+              {{ form.username(size=32) }}
+              {% for error in form.username.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+              {% endfor %}
+          </p>
+          <p>
+              {{ form.password_hash.label }}<br>
+              {{ form.password_hash(size=32) }}
+              {% for error in form.password_hash.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+              {% endfor %}
+          </p>
+          <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+          <p>{{ form.submit() }}</p>
+      </form>
+      </div>
+</div>
+
+<div class='col'>
+  <div class='card p-5'>
+    <div class='row text-center align-content-center''>
+    <h3> Do you love growing plants and also want to support a local charity? Sign up to be a Seller where you can offer your plants for sale and donate proceeds to a charity of your choice!
+
+</h3>
+</div>
+<div class='row text-center align-content-center' id='greeting'>
+    <a href="{{ url_for('seller.register') }}"><button class="btn btn-warning btn-lg">Register to Become a Seller</button></a>
+</div>
+</div>
+
+</div>
+
+</div>
+
+    <!--button to seller login -->
+
+</div>
+
+
+{% endblock %}
+</div>

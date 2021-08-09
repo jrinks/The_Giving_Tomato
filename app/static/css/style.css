@@ -1,0 +1,31 @@
+body{
+    
+}
+
+.title{
+    height: 20vh;
+}
+
+#greeting{
+    display: flex;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    justify-content: center;
+    color: white;
+    font-weight:bolder;
+}
+
+
+.card{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2%;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 1000;
+    color:black;
+    }
+
+ul{
+    list-style-type:none
+}
+
+
+

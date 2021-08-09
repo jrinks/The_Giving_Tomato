@@ -1,0 +1,60 @@
+<div class="bg-image align-content-center"
+style="background-color: rgb(131, 179, 152) ;
+  img-fluid; 
+  max-width: 100%; 
+  min-height: 100%
+"
+>
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  
+  
+<div class='card'>
+    <h1>Sellers can add pickup details here!</h1>
+    <form action="" method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset>
+            {{ form.pickup_date.label }}
+            {{ form.pickup_date(class='form-control', placeholder='Pickup Date') }}
+        </fieldset>
+        <fieldset>
+            {{ form.pickup_time.label }}
+            {{ form.pickup_time(class='form-control', placeholder='Pickup_Time') }}
+        </fieldset>
+        <fieldset>
+            {{ form.pickup_address.label }}
+            {{ form.pickup_address(class='form-control', placeholder='Pickup_Address') }}
+        </fieldset>
+        <fieldset>
+            {{ form.pickup_city.label }}
+            {{ form.pickup_city(class='form-control', placeholder='Pickup City') }}
+        </fieldset>
+        <fieldset>
+            {{ form.pickup_state.label }}
+            {{ form.pickup_state(class='form-control', placeholder='Pickup State') }}
+        </fieldset>
+        <fieldset>
+            {{ form.pickup_instructions.label }}
+            {{ form.pickup_instructions(class='form-control', placeholder='Pickup Instructions') }}
+        </fieldset>
+       
+        {{ form.submit(class='btn btn-success id=submit') }}
+    </div>
+</form>
+
+    
+</div>
+
+{% endblock %}
+
+</div> 
+
+
+
+

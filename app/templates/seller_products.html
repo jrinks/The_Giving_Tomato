@@ -1,0 +1,89 @@
+<div class="bg-image align-content-center"
+style="background-color: rgb(131, 179, 152) ">
+
+{% extends "base.html" %}
+{% block content %}
+<div class='row text-left align-content-center'>
+   
+    
+<div class='col'>
+        <div class='card text-left align-content-center'>
+            <h1>Add Products</h1>
+
+        <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+
+        <fieldset>
+         {{ form.plant_name.label }}
+         {{ form.plant_name(class='form-control', placeholder='Plant Name') }}
+       
+        </fieldset>
+        <fieldset>
+    {{ form.plant_description.label }}
+    {{ form.plant_description(class='form-control', placeholder='Plant Description') }}
+   
+        </fieldset>
+        <fieldset>
+         {{ form.price.label }}
+            {{ form.price(class='form-control', placeholder='Price') }}
+           
+        </fieldset>
+        <fieldset>
+            {{ form.category_id.label }}
+            {{ form.category_id(class='form-control', placeholder='Category ID') }}
+        </fieldset>
+        <fieldset>
+            {{ form.img_url.label }}
+            {{ form.img_url(class='form-control', placeholder='img_url') }}
+            <ul>
+                {% for error in form.img_url.errors %}
+                    <li style="color:red;"> {{ error }}
+                    </li>
+                {% endfor %}
+                 </ul>
+        </fieldset>
+        <fieldset>
+         {{ form.is_heirloom.label }}
+          {{ form.is_heirloom }}
+        </fieldset>
+        {{ form.submit(class='btn btn-warning') }}
+
+</div>
+</div>
+</div>
+
+
+<div class='col'>
+    <div class='card text-left align-content-left'>
+        <h1>Seller Products </h1>
+    </div>
+{% for p in myproducts %}
+<div class='card text-left align-content-left'>
+<div class='row'>
+    <div class='col'>
+
+        <img src="{{ p.img_url }}" class="card-img-top">
+
+    </div>
+  <div class='col'>
+<ul>
+    <li>Plant Name: {{ p.plant_name}}</li>
+    <li>Plant Description: {{ p.plant_description}}</li>
+    <li>Is Heirloom? {{ p.is_heirloom}}</li>
+    <li>Price: {{ p.price}}</li>
+    <li>Plant Category ID Number: {{ p.category_id}}</li>
+    </ul>
+    </div>
+    <div class='col'>
+
+      <a href="/product/delete/{{p.id}}" class="btn btn-sm btn-danger">Delete</a>
+    </div>
+</div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+</div>
+{% endblock %}
+</div> 

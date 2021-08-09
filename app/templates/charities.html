@@ -1,0 +1,35 @@
+<div class="bg-image align-content-center"
+style="background-color: rgb(131, 179, 152) ;
+  img-fluid; 
+  max-width: 100%; 
+  min-height: 100%
+"
+>
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  {% for mycharity in mycharities %}
+  
+  <div class="col p-5">
+    <div class="card w-100 h-100 p-5">
+      <img src="https://images0.westend61.de/0001364368pw/close-up-of-hand-holding-plant-EYF04976.jpg" class="card-img-top" alt="Give Donate Help Volunteer">
+      <div class="card-body">
+        <h3 class="card-title">{{ mycharity.org_name}}</h3>
+        <p class="card-text">{{ mycharity.org_city}} , {{ mycharity.org_state}}</p>
+        <p> {{ mycharity.org_description}}</p>
+      </div>
+    </div>
+  </div>
+
+
+{% endfor %}
+</div>
+
+{% endblock %}
+
+</div> 
+

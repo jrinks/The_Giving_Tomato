@@ -1,0 +1,56 @@
+<div class="bg-image align-content-center"
+style="background-color: rgb(131, 179, 152) ;
+  img-fluid; 
+  max-width: 100%; 
+  min-height: 100%
+"
+>
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  
+    
+
+    <form action="" method="POST">
+        <h1>Sellers- Add Charity Info Here!</h1>
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            <fieldset>
+                {{ form.org_name.label }}
+                {{ form.org_name(class='form-control', placeholder='Org Name') }}
+            </fieldset>
+            <fieldset>
+                {{ form.org_mission.label }}
+                {{ form.org_mission(class='form-control', placeholder='Org Mission') }}
+            </fieldset>
+            <fieldset>
+                {{ form.org_description.label }}
+                {{ form.org_description(class='form-control', placeholder='Org Description') }}
+            </fieldset>
+            <fieldset>
+                {{ form.org_city.label }}
+                {{ form.org_city(class='form-control', placeholder='Org City') }}
+            </fieldset>
+            <fieldset>
+                {{ form.org_state.label }}
+                {{ form.org_state(class='form-control', placeholder='Org State') }}
+            </fieldset>
+            <fieldset>
+                {{ form.org_url.label }}
+                {{ form.org_url(class='form-control', placeholder='Org Url') }}
+            </fieldset>
+            
+            {{ form.submit(class='btn btn-success') }}
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
+</div> 
+
+

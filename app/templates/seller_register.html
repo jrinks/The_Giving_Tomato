@@ -1,0 +1,65 @@
+<div class="bg-image align-content-center "
+style="
+  background-image:  url('../static/img/pexels-vitezslav-vylicil-5412144.jpg');
+  img-fluid; 
+  max-width: 100%; 
+  height: 100%
+"
+>
+
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<div class='row text-center align-content-center' id='greeting'>
+    <div class='card col-5 text-left align-content-center'>
+        <h3>Register to be a Seller</h3>
+        <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            <fieldset>
+                {{ form.username.label }}
+                {{ form.username(class='form-control', placeholder='Username') }}
+            </fieldset>
+            <fieldset>
+                {{ form.email.label }}
+                {{ form.email(class='form-control', placeholder='Email') }}
+            </fieldset>
+            <fieldset>
+                {{ form.password_hash.label }}
+                {{ form.password_hash(class='form-control', placeholder='Password') }}
+            </fieldset>
+            <fieldset>
+                {{ form.confirm_pass.label }}
+                {{ form.confirm_pass(class='form-control', placeholder='Confirm Password') }}
+            </fieldset>
+            <fieldset>
+                {{ form.first_name.label }}
+                {{ form.first_name(class='form-control', placeholder='First Name') }}
+            </fieldset>
+            <fieldset>
+                {{ form.last_name.label }}
+                {{ form.last_name(class='form-control', placeholder='Last Name') }}
+            </fieldset>
+            <fieldset>
+                {{ form.company_name.label }}
+                {{ form.company_name(class='form-control', placeholder='Company Name optional') }}
+            </fieldset>
+            <fieldset>
+                {{ form.phone.label }}
+                {{ form.phone(class='form-control', placeholder='Phone Number') }}
+            </fieldset>
+            {{ form.submit(class='btn btn-warning') }}
+        </div>
+    </form>
+    </div>
+
+
+
+</div>
+
+{% endblock %}
+
+</div> 

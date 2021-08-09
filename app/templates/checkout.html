@@ -1,0 +1,41 @@
+<div class="bg-image align-content-center"
+style="background-color: seagreen "
+>
+{% extends "base.html" %}
+{% block content %}
+<div class='row text-left align-content-center'>
+   
+    
+<div class='col'>
+        <div class='card text-left align-content-center sticky-top'>
+            <h1>Checkout!</h1>
+        <div class='card text-left align-content-left'>
+            {% for c in cartproducts %}
+            <div class='card text-left align-content-left'>
+            <div class='row'>
+              <div class='col'>
+            <ul>
+                <li>Cart Item ID: {{ c.id}}</li>
+                <li>Product id: {{ c.product_id}}</li>
+                <li>Quantity {{ c.quantity}}</li>
+                
+                </ul>
+                </div>
+                
+                <div class='col'>
+            
+                  <a href="/cart/delete/{{c.id}}" class="btn btn-sm btn-warning">Remove From Cart</a>
+                </div>
+            </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+      
+            
+
+
+</div>
+</div>
+
+{% endblock %}

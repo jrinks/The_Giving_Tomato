@@ -1,0 +1,38 @@
+
+<div class="bg-image align-content-center"
+style="background-color: rgb(131, 179, 152) ;
+  img-fluid; 
+  max-width: 100%; 
+  height: 100%
+"
+>
+
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Sellers can view their pickup entries here!</h1>
+
+{% for mypickup in mypickups %}
+<div class='card'>
+<ul>
+    <li>Pickup Date: {{ mypickup.pickup_date}}</li>
+    <li>Pickup Time: {{ mypickup.pickup_time}}</li>
+    <li>Pickup Address: {{ mypickup.pickup_address}}</li>
+    <li>City: {{ mypickup.pickup_city}}</li>
+    <li>State: {{ mypickup.pickup_state}}</li>
+    <li>Pickup Instructions: {{ mypickup.pickup_Instructions}}</li>
+</ul>
+
+</div>
+
+{% endfor %}
+{% endblock %}
+
+</div> 
+
+
+
+
+
+
+

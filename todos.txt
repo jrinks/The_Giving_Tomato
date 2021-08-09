@@ -1,0 +1,11 @@
+######pickup
+- i can add a pickup but its not linking to the seller who added its
+-'and form.validate_on_submit():' isn't working on add pickup route 
+
+#####seller
+- seller table not linked to user table
+-'and form.validate_on_submit():' isn't working on register route for sellers
+-add button for seller logout somehwere
+
+###product
+-add a product image url field to product table

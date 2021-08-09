@@ -1,0 +1,85 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">The Giving Tomato</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        
+        <li class="nav-item">
+          <a class="nav-link"href="{{ url_for('main.index') }}">Home</a>
+          <li class="nav-item">
+            <a class="nav-link"href="{{ url_for('user.register') }}">User Register</a>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('cart.shop') }}">Shop</a>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('seller.register') }}">Seller Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('seller.charities') }}">Charities We Support</a>
+        </li>
+
+
+        {% if current_user.is_authenticated and current_user.role == 'seller' %}
+        <!--logged in sellers only-->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('product.add_product') }}">Your Products</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('seller.add_pickupinfo') }}">Add Pickup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('seller.get_pickups') }}">View Pickups</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('seller.add_charityinfo') }}">Add Charities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('seller.get_charity') }}">View Charities</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('text.compose') }}">Send User Text </a>
+        </li>
+
+        {% elif current_user.is_authenticated and current_user.role == 'user' %}
+       <!--logged in users-->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('cart.checkout') }}">Checkout</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('order.get_order') }}">View Orders</a>
+        </li>
+        
+        
+        {% endif %}
+       
+        
+
+        <!--add users take poll-->
+
+
+
+
+         <!--logged in users only-->
+
+         {% if current_user.is_authenticated %}
+         <li class="btn btn-danger">
+             <a class="nav-link" href="{{ url_for('user.logout') }}">Logout</a>
+         </li>
+         {% else %}
+         <li class="btn btn-success">
+             <a class="nav-link" href="{{ url_for('user.login') }}">Login</a>
+         </li>
+         {% endif %}
+       
+      </ul>
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> -->
+    </div>
+  </nav>
+

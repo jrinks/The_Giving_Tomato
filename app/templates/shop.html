@@ -1,0 +1,104 @@
+<div class="bg-image align-content-center"
+style="background-color: rgb(131, 179, 152)  "
+>
+{% extends "base.html" %}
+{% block content %}
+<div class='row text-left align-content-center'>
+   
+    
+<div class='col-4'>
+        <div class='card text-left align-content-center sticky-top'>
+            <h1>Your Cart</h1>
+        <div class='card text-left align-content-left'>
+            {% for c in cartproducts %}
+            <div class='card text-left align-content-left'>
+            <div class='row'>
+              <div class='col'>
+            <ul>
+                <li>Product id: {{ c.product_id}}</li>
+             
+                <li>Quantity {{ c.quantity}}</li>
+                
+                </ul>
+                </div>
+                
+                <div class='col'>
+            
+                  <a href="/cart/delete/{{c.id}}" class="btn btn-sm btn-warning">Remove From Cart</a>
+                </div>
+            </div>
+                </div>
+                {% endfor %}
+            </div>
+            <a href="/cart/checkout" class="btn btn-sm btn-success">Checkout</a>
+      
+            
+
+
+</div>
+</div>
+
+
+
+<div class='col-8'>
+    <div class='card text-left align-content-left'>
+        <h1>Available Products</h1>
+    </div>
+    {% for p in myproducts %}
+    <div class='card text-left align-content-left'>
+    <div class='row'>
+        <div class='col'>
+
+            <img src="https://cdn3.volusion.com/ph9xz.o9ecs/v/vspfiles/photos/TF-0058-2.jpg?v-cache=1432635666" class="card-img-top">
+    
+        </div>
+
+
+        <div class='col'>
+
+            <ul>
+                <li>{{ p.plant_name}}</li>
+                <li> {{ p.plant_description}}</li>
+                <li> Heirloom? {{ p.is_heirloom}}</li>
+                <li>${{ p.price}}</li>
+                <li></li>
+                </ul>
+                </div>
+              
+
+
+                <div class='col'>
+                    <a href="/cart/add/{{p.id}}" class="btn btn-sm btn-warning">Add to Cart</a>
+                </div>
+
+
+                </div>
+
+
+
+        </div>
+   
+    
+    {% endfor %}
+
+
+
+
+
+
+</div>
+</div>
+{% endblock %}
+</div> 
+
+
+
+
+
+
+
+
+
+
+
+
